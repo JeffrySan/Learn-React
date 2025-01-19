@@ -1,9 +1,9 @@
 import './App.css';
 
+import React from 'react'
+
 export default function App() {
   return (
-    <div className="App">
-        App
-    </div>
-  );
+    <div>App</div>
+  )
 }
