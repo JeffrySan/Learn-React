@@ -7,10 +7,17 @@ import Footer from "./components/Footer"
 
 function App() {
     const [count, setCount] = useState(0);
-
+    
     function handleAdd() {
-        count += 1;
-        console.log(count);
+        setCount(count + 1);
+    }
+
+    function handleSub() {
+        setCount(count - 1);
+    }
+
+    function handleReset() {
+        setCount(0);
     }
 
     return (
@@ -20,7 +27,8 @@ function App() {
             <div className="box">
                 <p>{count}</p>
                 <button onClick={handleAdd} className="add">ADD</button>
-                <button className="sub">SUB</button>
+                <button onClick={handleSub} className="sub">SUB</button>
+                <button onClick={handleReset} className="reset">RESET</button>
             </div>
             <Footer />
         </div>
