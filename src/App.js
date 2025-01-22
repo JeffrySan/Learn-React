@@ -1,18 +1,30 @@
+import { useState} from 'react';
 import './App.css';
 
 import React from 'react'
 import Header from './components/Header'
 import Footer from "./components/Footer"
 
-export default function App() {
+function App() {
+    const [count, setCount] = useState(0);
+
+    function handleAdd() {
+        count += 1;
+        console.log(count);
+    }
 
     return (
-        <>
+        <div className="App">
             <Header />
-            <h1 className='active'> Naice </h1>
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, labore beatae. Nemo veniam, fugit laudantium natus fuga doloribus, perferendis distinctio eum, in molestiae quam? Quidem ipsam provident quibusdam distinctio laborum sit, officiis, consequuntur magni perspiciatis reiciendis sequi, nam eos. Voluptatibus molestiae tempora hic similique dicta exercitationem earum corrupti consequatur, eveniet consequuntur pariatur velit neque maiores consectetur optio reiciendis aut blanditiis illo maxime dolorum repellat! Laudantium facilis magnam vel corporis numquam labore neque esse, cupiditate accusamus, similique ipsum iste inventore hic est illo. Autem voluptate ducimus necessitatibus alias atque blanditiis ut unde asperiores delectus? Voluptate vel veritatis dignissimos? Exercitationem, nobis excepturi.</p>
+            <h1 className='active'> Naice Counter </h1>
+            <div className="box">
+                <p>{count}</p>
+                <button onClick={handleAdd} className="add">ADD</button>
+                <button className="sub">SUB</button>
+            </div>
             <Footer />
-        </>
+        </div>
     )
 }
+
+export default App;
