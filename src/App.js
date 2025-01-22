@@ -11,16 +11,22 @@ function App() {
         {id: 2371, name: "Edit React Lectures", completed: false},
         {id: 3271, name: "Watch Lectures", completed: false},
     ]);
+    const [show, setShow] = useState(true);
+
+    function handleDelete(id){
+        setTasks(tasks.filter(task => task.id !== id));
+    }
 
     return (
         <div className="App">
             <Header />
             <h1 className='active'> Naice Task List </h1>
             <ul>
-                { tasks.map((task,) => (
-                    <li key={task.id}>
+                <button onClick={() => setShow(!show)}>Toggle</button>
+                { show && tasks.map((task,) => (
+                    <li key={task.id} className={task.completed ? "completed" : "incompleted"}>
                         <span>{task.id} - {task.name}</span>
-                        <button>Delete</button>
+                        <button onClick={() => handleDelete(task.id)}className="delete">Delete</button>
                     </li>
                 )) }
             </ul>
