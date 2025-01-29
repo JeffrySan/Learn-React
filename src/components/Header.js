@@ -1,10 +1,10 @@
-import Blender from "./../assets/blender.JPG"
-import "./header.css"
-export default function Header() {
+import Logo from "./../assets/logo.png"
+
+export const Header = () => {
   return (
-    <>
-        <img className="blender" src={Blender} alt=""/>
-        <div>Header</div>
-    </>
+    <header>
+        <img src={Logo} alt="" />
+        <a href="/">Home</a>
+    </header>
   )
 }
