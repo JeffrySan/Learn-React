@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { TaskCard } from './TaskCard';
+import { BoxCard } from './BoxCard';
 
 export const TaskList = (props) => {
 
@@ -20,9 +21,22 @@ export const TaskList = (props) => {
             <ul>
                 <button onClick={() => setShow(!show)}>Toggle</button>
                 {show && tasks.map((task) => (
-                    <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+                    <TaskCard key={task.id} task={task} handleDelete={handleDelete} info={props.info} />
                 ))}
             </ul>
+            <BoxCard result="success">
+                <p className="title">Lorem, ipsum.</p>
+                <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, inventore.</p>
+            </BoxCard>
+            <BoxCard result="warning">
+                <p className="title">Lorem, ipsum dolor.</p>
+                <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, inventore.</p>
+            </BoxCard>
+            <BoxCard result="alert">
+                <p className="title">Lorem ipsum dolor sit.</p>
+                <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, inventore.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, vitae quibusdam. Impedit odio eos, assumenda dicta dolore eveniet, autem id necessitatibus, eaque totam quia voluptates doloremque quasi ducimus sequi optio molestiae fuga sapiente quidem tenetur sit? Ullam similique quaerat minus placeat nihil, molestiae sed harum eum excepturi? Minima, consectetur ratione.</p>
+            </BoxCard>
         </>
     )
 }
